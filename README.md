@@ -68,7 +68,7 @@ cd observability-demo
 
 docker compose up -d --build
 
-Access services:
+3. Access services:
 
 Application: http://localhost:5000
 
