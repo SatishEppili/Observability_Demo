@@ -1,0 +1,51 @@
+{
+  "annotations": {"list": []},
+  "editable": true,
+  "gnetId": null,
+  "graphTooltip": 0,
+  "id": null,
+  "iteration": 162,
+  "panels": [
+    {
+      "datasource": "Prometheus",
+      "fieldConfig": {"defaults": {}},
+      "gridPos": {"h": 8, "w": 12, "x": 0, "y": 0},
+      "id": 2,
+      "options": {},
+      "targets": [
+        {
+          "expr": "sum(rate(http_requests_total[1m]))",
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "title": "HTTP requests (rate /s)",
+      "type": "timeseries"
+    },
+    {
+      "datasource": "Loki",
+      "gridPos": {"h": 8, "w": 12, "x": 12, "y": 0},
+      "id": 4,
+      "options": {"query": "{job=\"docker\"}"},
+      "title": "App logs (Loki)",
+      "type": "logs"
+    },
+    {
+      "datasource": null,
+      "gridPos": {"h": 4, "w": 24, "x": 0, "y": 8},
+      "id": 6,
+      "options": {"content": "**Traces**: open Jaeger UI at http://localhost:16686 and search for service `observability-demo`."},
+      "title": "Traces (Jaeger)",
+      "type": "text"
+    }
+  ],
+  "schemaVersion": 31,
+  "style": "dark",
+  "tags": ["observability"],
+  "templating": {"list": []},
+  "time": {"from": "now-1h", "to": "now"},
+  "title": "Observability Demo",
+  "uid": "observability-demo",
+  "version": 1
+}
+
